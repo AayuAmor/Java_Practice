@@ -18,7 +18,7 @@ public class ConStatement{
         }
         else{
             System.out.println("Senior Citizen");
-        };
+        }
 
     };
 
@@ -33,48 +33,43 @@ public class ConStatement{
 
         switch(operator){
 
-            case "+" : System.out.println(num1 + num2);
-            break;
+            case "+" ->System.out.println(num1 + num2);
             
-            case "-": System.out.println(num1 - num2);
-            break;
+            
+            case "-"-> System.out.println(num1 - num2);
+            
 
-            case "*": System.out.println(num1 * num2);
-            break;
+            case "*"-> System.out.println(num1 * num2);
+            
 
-            case "/": System.out.println(num1 / num2);
-            break;
-
-
+            case "/"-> System.out.println(num1 / num2);
         }
+
+
+        
 
     }
     
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
         
-    
-    
-        System.out.println("Select One:");
-        System.out.println("1. Age-Comparision ");
-        System.out.println("2. Calculator");
-        System.out.print("Your Input:");
-        int input = sc.nextInt();
         
+            System.out.println("Select One:");
+            System.out.println("1. Age-Comparision ");
+            System.out.println("2. Calculator");
+            System.out.print("Your Input:");
+            int input = sc.nextInt();
+            
 
-        ConStatement condition = new ConStatement();
+            ConStatement condition = new ConStatement();
 
-        switch (input) {
-            case 1:
-                condition.ageViwer();
-                break;
-        
-            case 2:
-                condition.calculator();
-                break;
+            switch (input) {
+                case 1 -> condition.ageViwer();
+                case 2 -> condition.calculator();
+                default -> { /* no action */ }
+            }
         }
-        sc.close();
 
     }
 };
